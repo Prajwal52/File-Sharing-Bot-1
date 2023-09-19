@@ -77,11 +77,11 @@ async def start_command(client: Client, message: Message):
 
             try:
             a = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
-                #await asyncio.sleep(10)
+                await asyncio.sleep(10)
             except FloodWait as e:
                 
              a = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
-                #await asyncio.sleep(10)
+                 await asyncio.sleep(10)
             except:
                 pass
         return
