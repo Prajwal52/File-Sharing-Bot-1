@@ -86,7 +86,7 @@ async def start_command(client: Client, message: Message):
                 pass
         return
         await asyncio.sleep(10)
-        await a.delete(20)
+        
     else:
         reply_markup = InlineKeyboardMarkup(
             [
