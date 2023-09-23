@@ -58,7 +58,7 @@ async def start_command(client: Client, message: Message):
         temp_msg = await message.reply("Files will be deleted in 30 minutes to avoid copyright issues. Please forward and save them.")
         try:
             messages = await get_messages(client, ids)
-            await asyncio.sleep(10)
+            #await asyncio.sleep(10)
         except:
             await message.reply_text("Something went wrong..!")
             return
