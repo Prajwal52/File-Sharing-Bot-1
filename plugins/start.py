@@ -55,13 +55,13 @@ async def start_command(client: Client, message: Message):
                 ids = [int(int(argument[1]) / abs(client.db_channel.id))]
             except:
                 return
-        temp_msg = await message.reply("Please wait...")
+        temp_msg = await message.reply("Files will be deleted in 30 minutes to avoid copyright issues. Please forward and save them.")
         try:
             messages = await get_messages(client, ids)
         except:
             await message.reply_text("Something went wrong..!")
             return
-        await temp_msg.delete(15)
+        #await temp_msg.delete(15)
 
         for msg in messages:
 
@@ -81,6 +81,7 @@ async def start_command(client: Client, message: Message):
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
+                await asyncio.sleep(10)
             except:
                 pass
         return
