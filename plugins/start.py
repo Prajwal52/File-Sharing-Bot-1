@@ -78,15 +78,15 @@ async def start_command(client: Client, message: Message):
 
             try:
                 await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
-                await asyncio.sleep(0.5)
+               # await asyncio.sleep(0.5)
             except FloodWait as e:
-                await asyncio.sleep(e.x)
+                #await asyncio.sleep(e.x)
                 await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
                 await asyncio.sleep(10)
             except:
                 pass
         return
-        await asyncio.sleep(15)
+        #await asyncio.sleep(15)
     else:
         reply_markup = InlineKeyboardMarkup(
             [
